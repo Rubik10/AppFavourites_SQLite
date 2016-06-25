@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="10dp"
+    android:layout_gravity="center_vertical">
+
+<android.support.v7.widget.CardView
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/card_margin"
+    card_view:cardCornerRadius="@dimen/card_album_radius"
+    card_view:cardElevation="8dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/titleImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgDetalle"
+            android:paddingLeft="@dimen/card_title_padding"
+            android:paddingRight="@dimen/card_title_padding"
+            android:paddingTop="@dimen/card_title_padding"
+            android:textColor="@color/album_title"
+            android:textSize="@dimen/card_title"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+
+

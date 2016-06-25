@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AppLoginCard</string>
+
+    <!-- Login & Register -->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password2"> Comfirm Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btnLogin">LOGIN</string>
+    <string name="btnRegister">REGISTER</string>
+    <string name="btnToRegister">Not a member? <u>Sign up now.</u></string>
+    <string name="btnToLogin">Already registred! <u>Login Me.</u></string>
+    <string name="welcome">Welcome</string>
+    <string name="btnLogout">LOGOUT</string>
+    <string name="chk">View pass</string>
+    <string name="name">Fullname</string>
+
+    <!-- Spinner -->
+    <string name="spinner">Select a Category for view their images</string>
+    <string name="prompt">Select a Category</string>
+
+    <!-- Main -->
+    <string name="backdrop_title">MASTER APP</string>
+    <string name="backdrop_subtitle">This season top 20 albums</string>
+
+
+</resources>
