@@ -3,7 +3,6 @@ package com.rubik.applogincard.app.controllers.Login;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -11,8 +10,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.rubik.applogincard.Activity.RegisterActivity;
-import com.rubik.applogincard.LoginActivity;
+import com.rubik.applogincard.Activity.LoginActivity;
 import com.rubik.applogincard.R;
+import com.rubik.applogincard.app.Utils.UtilsApp;
 import com.rubik.applogincard.app.Utils.ValidateInputs;
 
 /**
@@ -83,8 +83,7 @@ import com.rubik.applogincard.app.Utils.ValidateInputs;
 
         private void loginFallShowError (View view) {
             ValidateInputs.getAnimationFallLogin(view);
-           // Toast.makeText(cxt,"Enter a valid credentials for login",Toast.LENGTH_LONG).show();
-            Snackbar.make(view, "Login error, enter a valid credentials for login", Snackbar.LENGTH_LONG).show();
+            UtilsApp.showSnackBar(view, "Login error, enter a valid credentials for login");
         }
 
     }

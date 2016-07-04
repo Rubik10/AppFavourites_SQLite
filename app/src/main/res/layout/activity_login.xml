@@ -11,7 +11,7 @@
     android:background="@drawable/bg2"
     android:padding="10dp"
     android:gravity="center"
-    tools:context="com.rubik.applogincard.LoginActivity">
+    tools:context="com.rubik.applogincard.Activity.LoginActivity">
 
 
     <LinearLayout
@@ -41,6 +41,7 @@
             android:singleLine="true"
             android:textColor="@color/txtLogin"
             android:textColorHint="@color/txtLoginHint"
+            android:elevation="10sp"
             />
 
         <EditText
@@ -55,6 +56,7 @@
             android:singleLine="true"
             android:textColor="@color/txtLogin"
             android:textColorHint="@color/txtLoginHint"
+            android:elevation="10sp"
             />
 
         <CheckBox

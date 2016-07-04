@@ -7,7 +7,6 @@ package com.rubik.applogincard.model;
 
         private int idCategory;
         private String category;
-        // private Images image;
 
         public Categories () {}
 

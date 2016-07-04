@@ -10,17 +10,10 @@ public class Favorites {
 
     public Favorites () {}
 
-    public Favorites (int idFav, Users _user, Images img) {
-       this.idFav = idFav;
-        this.user = _user;
-        this.image=img;
-    }
-
     public Favorites (Users _user, Images img) {
         this.user = _user;
         this.image=img;
     }
-
 
 
     public int getIdFav() {

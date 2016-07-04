@@ -3,10 +3,10 @@ package com.rubik.applogincard.app.controllers.Register;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import com.rubik.applogincard.Activity.RegisterActivity;
-import com.rubik.applogincard.LoginActivity;
+import com.rubik.applogincard.Activity.LoginActivity;
+import com.rubik.applogincard.app.Utils.UtilsApp;
 import com.rubik.applogincard.app.db.UserSQL;
 import com.rubik.applogincard.model.Users;
 
@@ -31,7 +31,7 @@ import com.rubik.applogincard.model.Users;
         public void checkRegisterUser(final String name, final String mail, final String pass) {
             UserSQL userSQL = new UserSQL();
             userSQL.addUser(new Users(name, mail, pass)); //  // Inserting row in users table
-            Toast.makeText(context, "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+            UtilsApp.showToast(context,"User successfully registered. Try login now!");
 
             Intent intent = new Intent(context, LoginActivity.class);
             activity.startActivity(intent);

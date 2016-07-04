@@ -15,11 +15,14 @@
     android:layout_margin="@dimen/card_margin"
     card_view:cardCornerRadius="@dimen/card_album_radius"
     card_view:cardElevation="8dp"
+    android:padding="10dp"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imgDetalle"
@@ -37,9 +40,10 @@
             android:paddingRight="@dimen/card_title_padding"
             android:paddingTop="@dimen/card_title_padding"
             android:textColor="@color/album_title"
-            android:textSize="@dimen/card_title"
+            android:textSize="26sp"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:contentDescription="@string/app_name"/>
 
 
     </RelativeLayout>

@@ -22,15 +22,15 @@ import java.util.List;
         private Activity activity;
         private Context cxt;
 
-        private String[] spinnerSubtitle = { "Cinema Category", "TV Shows Category", "Cars Category", "Actors Category" };
-        private int spinnerImages[] = { R.drawable.icon_cine, R.drawable.icon_tv, R.drawable.icon_car, R.drawable.icon_actor};
+        private String[] spinnerSubtitle = { "Cinema Category", "TV Shows Category", "Cars Category", "Actors Category", "All" };
+        private int spinnerImages[] = { R.drawable.icon_cine, R.drawable.icono_tv24dp, R.drawable.icon_car, R.drawable.icon_actor,R.drawable.ic_all24dp};
 
 
         public mySpinnerAdapter(Context context, int resource, List<String> objects) {
             super(context, resource, objects);
 
             this.cxt =  context;
-            activity = (Activity) cxt;
+            activity = (MainActivity) cxt;
         }
 
             @Override
@@ -50,8 +50,8 @@ import java.util.List;
             View mySpinnerLayout = layoutInflater.inflate(R.layout.spinner_layout,parent,false);
 
                 // Convert the List<String> to String[] for use in the adapter - comboCategories
-            String [] categories = new String[MainActivity.comboCategories.size()];
-            MainActivity.comboCategories.toArray(categories);
+            String [] categories = new String[MainController.comboCategories.size()];
+            MainController.comboCategories.toArray(categories);
                 //Spinner Tittle
             TextView txtTitle = (TextView) mySpinnerLayout.findViewById(R.id.text_main_seen);
             txtTitle.setText(categories[position]);

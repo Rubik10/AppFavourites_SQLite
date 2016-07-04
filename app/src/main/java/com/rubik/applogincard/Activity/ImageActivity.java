@@ -1,46 +1,28 @@
 package com.rubik.applogincard.Activity;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.rubik.applogincard.R;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import com.rubik.applogincard.app.controllers.main.myFullScreenPagerAdapter;
+import com.rubik.applogincard.app.controllers.main.myReciclerViewAdapter;
 
 public class ImageActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image);
+            @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_image_fullscreen);
 
-        initImage();
+            int pos = getIntent().getIntExtra("pos", 0);
 
-        String name = getIntent().getStringExtra("name");
-        TextView txtTitle = (TextView) findViewById(R.id.titleImage);
-        txtTitle.setText(name);
+            ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+            myFullScreenPagerAdapter pagerAdapter = new myFullScreenPagerAdapter(this, myReciclerViewAdapter.listImages );
+            viewPager.setAdapter(pagerAdapter);
+            viewPager.setCurrentItem(pos);
+            viewPager.setOffscreenPageLimit(myReciclerViewAdapter.listImages.size());
+
+        }
+
     }
-
-    private void initImage() {
-        ImageView img = (ImageView) findViewById(R.id.imgDetalle);
-
-        Picasso.with(getApplicationContext()).load(
-                getIntent().getStringExtra("url"))
-                .resize(240, 300)
-                .into(img, new Callback() {
-                            @Override
-                            public void onSuccess() {
-                                Log.d("Picasso", "  Carga de imagenes correcta  " );
-                            }
-
-                            @Override
-                            public void onError() {
-                                Log.d("Picasso", "  Error en la carga de imagenes  " );
-                            }
-                        }
-                );
-    }
-}

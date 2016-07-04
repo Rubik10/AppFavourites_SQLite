@@ -21,11 +21,11 @@ import java.util.List;
 
     private static final String TAG = CategoriesSQL.class.getSimpleName();
     public static final String CAT_TABLE = "CATEGORIES";
-    //Columns Table
+        //Columns Table
     private static final String ID = "idCategory";
     private static final String CATEGORY = "category";
 
-    //Table
+        //Table
     private static final String CREATE_TABLE =
             "CREATE TABLE " + CAT_TABLE + " (\n" +
                     ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,\n" +

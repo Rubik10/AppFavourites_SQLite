@@ -9,18 +9,11 @@ public class Images {
     private String name;
     private String url;
     private int idCategory;
-
+    private boolean selected; // Control selected item in the gallery
 
     //Constructor
     public Images (){}
     public Images (int id) {this.idImage = id;}
-
-    public Images(int id, String _name, String _url, int idCat) {
-        this.idImage=id;
-        this.name = _name;
-        this.url = _url;
-        this.idCategory = idCat;
-    }
 
     public Images(String _name, String _url, int idCat) {
         this.name = _name;
@@ -76,6 +69,14 @@ public class Images {
 
     public int getCat() {
         return idCategory;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
 

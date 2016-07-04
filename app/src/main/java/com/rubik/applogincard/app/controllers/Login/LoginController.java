@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.rubik.applogincard.Activity.LoginActivity;
 import com.rubik.applogincard.Activity.MainActivity;
-import com.rubik.applogincard.LoginActivity;
 import com.rubik.applogincard.app.Utils.SessionManager;
 import com.rubik.applogincard.app.db.UserSQL;
 import com.rubik.applogincard.model.Users;
@@ -42,7 +42,7 @@ import com.rubik.applogincard.model.Users;
                Users user = userSQL.getUserByMail(mail); // Check if the user exist in the db by the mail entered by the user.
 
                 if (user.getMail().equals(mail) && user.getPass().equals(pass)) {
-                    session.setLogin(true,user.getIdUser(),user.getMail()); //TODO: quitar para pruebas  // set the state of the session so that the log user does not have to login again.
+                    session.setLogin(true,user.getIdUser(),user.getMail());  // set the state of the session so that the log user does not have to login again.
 
                     Intent intent = new Intent(cxt, MainActivity.class);   // Open the Main Actvity
                     intent.putExtra("mail",user.getMail());
@@ -52,12 +52,8 @@ import com.rubik.applogincard.model.Users;
 
                     Log.d(TAG , " The user " + user.getName() +" with mail : " +  user.getMail() + " is log in to the App");
 
-
                 } else {isLoggued = false;}
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+            } catch (Exception ex) {ex.printStackTrace();}
 
             return isLoggued;
         }
@@ -79,13 +75,6 @@ import com.rubik.applogincard.model.Users;
             }
         }
 
-
-
-
-            // Este Metodo ha de ser llamado desde la clase listener del MainActivity
-        /*public static void logOut (SessionManager session) {
-            session.setLogin(false);
-        }*/
 
         /**
          * Clear session details

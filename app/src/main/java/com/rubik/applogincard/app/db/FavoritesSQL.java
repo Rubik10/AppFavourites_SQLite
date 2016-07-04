@@ -201,13 +201,16 @@ public class FavoritesSQL { //extends SQLiteHandler
         return listFavsByUser;
     }
 
-    public List<Favorites> getAllFavoritesByCategory (int idCategory) {
+    public List<Images> getAllFavoritesByUserPerCategory (int idUser, int idCategory) {
 
-        String query = "SELECT nameIMG , URLIMG " +
-                "FROM IMAGES i, CATEGORIES c " +
-                "WHERE i.idImg = c.idImg " +
-                "AND idCategory = " + idCategory;
-        List<Favorites> listFavsByUser = new ArrayList<Favorites>();
+        String query = "SELECT i.idImg, nameIMG , URLIMG " +
+                " FROM FAVORITES F , IMAGES I, CATEGORIES C \n" +
+                " WHERE F.idImg = I.idImg\n" +
+                " AND i.idCat = c.idCategory " +
+                " AND idUser = " + idUser +
+                " AND idCat = " + idCategory;
+
+        List<Images> listFavsByUser = new ArrayList<Images>();
 
         try {
             SQLiteDatabase db = SQLiteManager.getConexion().connect("read");
@@ -216,12 +219,18 @@ public class FavoritesSQL { //extends SQLiteHandler
             if (cursor != null && cursor.getCount() > 0) {
                 if (cursor.moveToFirst()) {
                     do {
+                        Favorites fav = new Favorites();
+                        fav.setImage(new Images(
+                                Integer.parseInt(cursor.getString(0)) ,
+                                cursor.getString(1) ,
+                                cursor.getString(2)
+                        ));
                           /*  Images image = new Images();
                             image.setIdImage(Integer.parseInt(cursor.getString(0)));
                             image.setName(cursor.getString(1));
-                            image.setUrl(cursor.getString(2));
-                            //add to list
-                            listFavsByUser.add(image);*/
+                            image.setUrl(cursor.getString(2));*/
+                                //add to list
+                            listFavsByUser.add(fav.getImage());
                     } while (cursor.moveToNext());
                 }
                 cursor.close();

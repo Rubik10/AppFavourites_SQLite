@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.rubik.applogincard.Activity.RegisterActivity;
-import com.rubik.applogincard.LoginActivity;
+import com.rubik.applogincard.Activity.LoginActivity;
 import com.rubik.applogincard.R;
 import com.rubik.applogincard.app.Utils.ValidateInputs;
 import com.rubik.applogincard.app.db.UserSQL;

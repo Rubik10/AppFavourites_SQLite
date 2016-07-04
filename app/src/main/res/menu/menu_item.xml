@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rubik.applogincard.Activity.MainActivity">
+
+   <!-- <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never" />-->
+    <item
+        android:id="@+id/action_find"
+        android:icon="@drawable/icon_actor"
+        android:orderInCategory="1"
+        android:title="Find"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_logOut"
+        android:icon="@drawable/logout_18dp"
+        android:orderInCategory="2"
+        android:title="logOut"
+        app:showAsAction="ifRoom" />
+</menu>

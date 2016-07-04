@@ -25,7 +25,7 @@ import java.sql.Timestamp;
             this.mail=_mail;
             this.pass=_pass;
         }
-
+            //Login
         public Users ( String _mail, String _pass) {
             this.mail=_mail;
             this.pass=_pass;
